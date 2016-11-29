@@ -1,0 +1,20 @@
+{
+    "name": "imageviewer",
+    "version": "0.1.0",
+    "description": "An image viewer for Aqueti hi-res cameras",
+    "author": "Cameron Givler <cameron@aqueti.com>",
+    "scripts": {
+        "start": "nodejs server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/camerongivler/ImageViewer"
+    },
+    "bugs": {
+        "url": "https://github.com/camerongivler/ImageViewer/issues"
+    },
+    "dependencies": {
+        "socket.io": "1.7.x"
+    },
+    "license": "MIT"
+}

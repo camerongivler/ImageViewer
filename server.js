@@ -1,5 +1,5 @@
 var http = require('http'), url = require('url'), fs = require('fs'),
-        sio = require('socket.io'), cppMod = require('./build/Release/cppMod');
+        sio = require('socket.io');//, cppMod = require('./build/Release/cppMod');
 
 var server = http.createServer(function(req, res) {
     var urlStr = url.parse(req.url).pathname;
@@ -17,18 +17,20 @@ var server = http.createServer(function(req, res) {
 });
 
 server.listen(8000, function() {
-    console.log('Server listening at http://spinoza2.disp.duke.edu:8000/');
+    console.log('Server listening at localhost:8000/');
 });
 
 io = sio.listen(server);
 
 io.sockets.on('connection', function(socket) {
     socket.on('prev', function() {
-        cppMod.prev();
+        //cppMod.prev();
+        console.log("next picture");
         socket.emit('reload');
     });
     socket.on('next', function() {
-        cppMod.next();
+        //cppMod.next();
+        console.log("previous picture");
         socket.emit('reload');
     });
 });
